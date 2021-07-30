@@ -1,0 +1,30 @@
+name: 'tf-actions'
+description: 'Simple github action that help to update terraform vars using API call'
+inputs:
+  token:
+    description: 'Terraform token'
+    required: true
+  org_id:
+    description: 'Org Id that workspace belong to'
+    required: true
+
+  ws_name:
+    description: 'The name tf workspaces'
+    required: true
+  var_names:
+    description: 'The name of environment var, multiple vars support by comma separator '
+    required: true
+  var_values:
+    description: 'The values of environment var, multiple vars support by comma separator '
+    required: true
+  hcl:
+    description: 'Indicated that the var is hcl or not, default = false'
+    required: false
+
+outputs:
+  result: # id of output
+    description: 'The name of environment'
+
+runs:
+  using: 'node12'
+  main: 'index.js'

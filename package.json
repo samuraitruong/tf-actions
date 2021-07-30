@@ -1,0 +1,24 @@
+{
+  "name": "tf-actions",
+  "version": "1.0.0",
+  "description": "A simple TF action to update TF vars",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samuraitruong/tf-actions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/samuraitruong/tf-actions/issues"
+  },
+  "homepage": "https://github.com/samuraitruong/tf-actions#readme",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0"
+  }
+}
