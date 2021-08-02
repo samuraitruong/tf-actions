@@ -1,0 +1,31 @@
+on: [push]
+name: Sample
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test Update TF
+    steps:
+      - name: Run test action
+        id: test
+        uses: samuraitruong/tf-actions@main
+        with:
+          token: ${{secrets.TF_TOKEN}}
+          org_id: 'tnguyen'
+          ws_name: 'tf-actions'
+          var_names: 'var1,var2,var3'
+          var_values: 'value1_2,value2_2,value3_3'
+          hcl: false
+          auto_create: true
+          apply: false
+      - name: Update Hcl sub-field
+        id: test1
+        uses: samuraitruong/tf-actions@main
+        with:
+          token: ${{secrets.TF_TOKEN}}
+          org_id: 'tnguyen'
+          ws_name: 'tf-actions'
+          var_names: 'hcl_var'
+          var_values: 'regex|image_tag\s+=\s+"([^"]*)"|image_tag = "${{github.run_id}}"'
+          hcl: false
+          auto_create: true
+          apply: false
